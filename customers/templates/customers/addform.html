@@ -1,7 +1,8 @@
 {% extends 'customers/base.html' %}
 
 {% block content %}
-<form action="{% url "customers:add_customer"%}?submitted={{submitted}}" method="post" novalidate>
+<p><a href="{%url 'customers:list_customers'%}">Customer list</a></p>
+<form action="{% url "customers:add_customer"%}" method="post" novalidate>
     {% csrf_token %}
     <ul>
         {{ cf.as_ul }}
