@@ -2,8 +2,8 @@ from django.db import models
 from django import forms 
 
 class Customer(models.Model):
-    last_name = models.CharField('First name', max_length=500)
-    first_name = models.CharField('Last name', max_length=500)
+    first_name = models.CharField('First name', max_length=500)
+    last_name = models.CharField('Last name', max_length=500)
     phone = models.CharField('Phone', max_length=500)
     date_of_contact = models.DateField('Date of contact')
 

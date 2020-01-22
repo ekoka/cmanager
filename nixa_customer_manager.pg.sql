@@ -317,7 +317,7 @@ CREATE TABLE public.customers_customer (
     last_name character varying(500) NOT NULL,
     first_name character varying(500) NOT NULL,
     phone character varying(500) NOT NULL,
-    date_of_contact timestamp with time zone NOT NULL
+    date_of_contact date NOT NULL
 );
 
 
@@ -641,6 +641,9 @@ SELECT pg_catalog.setval('public.auth_user_user_permissions_id_seq', 1, false);
 --
 
 COPY public.customers_customer (id, last_name, first_name, phone, date_of_contact) FROM stdin;
+2	Ekoka	Michael	514.555.5555	2020-01-25
+4	Bar	Foor	+1.514.770.1555	2020-01-25
+3	Smith	John	514.333.3333	2020-01-21
 \.
 
 
@@ -648,7 +651,7 @@ COPY public.customers_customer (id, last_name, first_name, phone, date_of_contac
 -- Name: customers_customer_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('public.customers_customer_id_seq', 1, false);
+SELECT pg_catalog.setval('public.customers_customer_id_seq', 4, true);
 
 
 --
@@ -712,6 +715,8 @@ COPY public.django_migrations (id, app, name, applied) FROM stdin;
 17	customers	0001_initial	2020-01-22 10:25:42.181202-05
 18	sessions	0001_initial	2020-01-22 10:25:42.205594-05
 19	customers	0002_auto_20200122_1547	2020-01-22 10:48:02.747361-05
+20	customers	0003_auto_20200122_1910	2020-01-22 14:11:02.787434-05
+21	customers	0004_auto_20200122_2143	2020-01-22 16:43:28.365357-05
 \.
 
 
@@ -719,7 +724,7 @@ COPY public.django_migrations (id, app, name, applied) FROM stdin;
 -- Name: django_migrations_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('public.django_migrations_id_seq', 19, true);
+SELECT pg_catalog.setval('public.django_migrations_id_seq', 21, true);
 
 
 --
