@@ -5,7 +5,7 @@ class Customer(models.Model):
     last_name = models.CharField('First name', max_length=500)
     first_name = models.CharField('Last name', max_length=500)
     phone = models.CharField('Phone', max_length=500)
-    date_of_contact = models.DateTimeField('Date of contact')
+    date_of_contact = models.DateField('Date of contact')
 
     def __str__(self):
         return '{first_name} {last_name}'.format(

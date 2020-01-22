@@ -13,20 +13,24 @@ def list_customers(request):
     })
 
 def add_customer(request):
+    submitted = True if 'submitted' in request.GET else False
     if request.method=='POST':
         cf = CustomerForm(request.POST)
         if cf.is_valid():
             cf.save()
             return redirect(reverse('customers:list_customers'))
-        return redirect(reverse('customers:add_customer'))
+        return render(request, 'customers/form.html', {
+            'cf':cf,
+            'submitted': submitted,
+        })
 
     if request.method=='GET':
-        submitted = True if 'submitted' in request.GET else False
         cf = CustomerForm()
         return render(request, 'customers/form.html', {
             'cf': cf,
             'submitted': submitted,
         })
+    # TODO: a better date widget in the template
     # TODO: handle methods not allowed
 
 def edit_customer(request, customer_id):
