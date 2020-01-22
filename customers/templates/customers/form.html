@@ -1,0 +1,12 @@
+{% extends 'customers/base.html' %}
+
+{% block content %}
+<form action="{% url "customers:add_customer" %}" method="post" novalidate>
+    {% csrf_token %}
+    <ul>
+        {{ cf.as_ul }}
+    </ul>
+    <input type="submit"/>
+</form>
+{% endblock content %}
+

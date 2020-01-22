@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+    {% load static %}
+    <head>
+        <meta charset="utf-8">
+        <link href="{% static 'main.css'%}" rel="stylesheet" type="text/css">
+        <title>
+            {% block title %} NIXA {% endblock title %}
+        </title>
+    </head>
+
+    <body>
+        <div id="wrapper">
+            <aside id="rightsidebar">
+                {% block leftside %}
+                {% endblock leftside %}
+            </aside>
+
+            <section id="main">
+                {% block content %}
+                {% endblock content %}
+            </section>
+
+            <footer id="footer"> Copyright &copy;
+                <script type="text/JavaScript">
+                    document.write(new Date().getFullYear());
+                </script> NIXA
+            </footer>
+        </div>
+
+    </body>
+</html>
