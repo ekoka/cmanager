@@ -1,0 +1,3 @@
+*.gitcommit
+*config.py
+*secrets.py
