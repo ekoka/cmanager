@@ -6,5 +6,6 @@ app_name = 'customers'
 urlpatterns = [
     path('add', views.add_customer, name='add_customer'),
     path('', views.list_customers, name='list_customers'),
-    #path('<int:id>', views.edit_customer, name="edit_customer"),
+    path('<int:customer_id>', views.edit_customer, name="edit_customer"),
+    path('notfound', views.notfound, name="notfound"),
 ]

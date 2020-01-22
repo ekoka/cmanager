@@ -1,0 +1,30 @@
+{% extends "customers/base.html" %}
+
+{% block content %}
+<h2>Customers</h2>
+<table>
+    <tr>
+        <th>Customer name</th>
+        <th>Phone</th>
+        <th>Date of contact</th>
+        <th>Actions</th>
+    </tr>
+{% for c in customers %}
+    <tr>
+        <td>
+            {{ c.last_name }}, {{c.first_name}}
+        </td>
+        <td>
+            {{ c.phone }}
+        </td>
+        <td>
+            {{ c.date_of_contact }}
+        </td>
+        <td>
+            <a href="{% url 'customers:edit_customer' customer_id=c.id %}">Edit</a>
+        </td>
+    </tr>
+{% endfor %} 
+</table>
+{% endblock content %}
+
